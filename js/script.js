@@ -29,7 +29,7 @@ noBtn.addEventListener("click", () => {
 });
 
 // Movimento aleatório (respeitando container .buttons)
-function moveButtonRandom() {
+/*function moveButtonRandom() {
   const containerRect = buttonsContainer.getBoundingClientRect();
   const maxX = containerRect.width - noBtn.offsetWidth;
   const maxY = containerRect.height - noBtn.offsetHeight;
@@ -39,6 +39,21 @@ function moveButtonRandom() {
 
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
+}*/
+
+function moveNoRndom() {
+    const container = document.querySelector(".buttons");
+    const containerRect = container.getBoundingClientRect();
+    const buttonRect = noButton.getBoundingClientRect();
+
+    // limites para não sair da área
+    const maxX = containerRect.width - buttonRect.width;
+    const maxY = containerRect.height - buttonRect.height;
+
+    noButton.style.position = "absolute";
+    noButton.style.left = `${newX}px`;
+    noButton.style.top = `${newY}px`;
+ 
 }
 
 // Fugir do mouse dentro do container
@@ -68,6 +83,7 @@ buttonsContainer.addEventListener("mousemove", (event) => {
     newX = Math.max(0, Math.min(containerRect.width - noBtn.offsetWidth, newX));
     newY = Math.max(0, Math.min(containerRect.height - noBtn.offsetHeight, newY));
 
+    noBtn.style.position = "absolute";
     noBtn.style.left = `${newX}px`;
     noBtn.style.top = `${newY}px`;
   }

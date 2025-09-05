@@ -43,6 +43,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px;
     margin-top: 20px; /* 🔥 espaço entre o texto e os botões */
   }
   
@@ -53,25 +54,26 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
   }
   
   #yes {
     background-color: #4CAF50;
     color: white;
-    position: relative;
-    z-index: 1;
-    margin-right: 60px; /* 🔥 garante espaço fixo entre SIM e NÃO */
+    /*z-index: 1;
+    margin-right: 100px; /* 🔥 garante espaço fixo entre SIM e NÃO */
   }
   
   #no {
     background-color: #f44336;
     color: white;
-    position: absolute;
+    /*position: absolute;
     left: 65%;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 50%;*/
+    /*transform: translateY(-50%);
     z-index: 2;
-    transition: left 0.15s ease, top 0.15s ease, transform 0.2s ease;
+    transition: left 0.15s ease, top 0.15s ease, transform 0.2s ease;*/
   }
   
   .hidden {
@@ -82,4 +84,25 @@ body {
     font-size: 28px;
     color: #d6336c;
     text-align: center;
+  }
+
+  /*#finalScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }*/
+
+  #final-img {
+    width: 200px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  #final-img:hover {
+    transform: scale(1.05);
   }
